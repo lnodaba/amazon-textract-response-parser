@@ -2,18 +2,21 @@ import json
 from trp import Document
 
 def processDocument(doc):
+    result = ''
     for page in doc.pages:
         print("PAGE\n====================")
         for line in page.lines:
             print("Line: {}--{}".format(line.text, line.confidence))
             for word in line.words:
                 print("Word: {}--{}".format(word.text, word.confidence))
+        
         for table in page.tables:
             print("TABLE\n====================")
             for r, row in enumerate(table.rows):
                 for c, cell in enumerate(row.cells):
                     print("Table[{}][{}] = {}-{}".format(r, c, cell.text, cell.confidence))
         print("Form (key/values)\n====================")
+        
         for field in page.form.fields:
             k = ""
             v = ""
@@ -37,6 +40,8 @@ def processDocument(doc):
         for field in fields:
             print("Field: Key: {}, Value: {}".format(field.key, field.value))
 
+    return "Test" 
+
 def run():
     response = {}
     
@@ -45,6 +50,7 @@ def run():
         response = json.loads(document.read())
 
     doc = Document(response)
-    processDocument(doc)
+    result = processDocument(doc)
+    print(result)
 
 run()
