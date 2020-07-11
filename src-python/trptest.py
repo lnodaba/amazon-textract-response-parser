@@ -1,36 +1,41 @@
 import json
 from trp import Document
-
-# import nltk
-# nltk.download()
-
-from nltk.tokenize import word_tokenize
-
-def getTextFromDoc(doc):
-    result = ''
-    for page in doc.pages:
-        for line in page.lines:
-            result += " " + line.text
-            # for word in line.words:
-            #     word.text      
-
-        for table in page.tables:
-            for row in table.rows:
-                for cell in row.cells:
-                    result += " " + cell.text
-
-    return result
+from textract_tokenizer import *
 
 def run():
     response = {}
     
-    filePath = "test-response.json"
+    filePath = "1-response.json"
     with open(filePath, 'r') as document:
         response = json.loads(document.read())
 
+
     doc = Document(response)
-    result = getTextFromDoc(doc)
+
+    print("\n\n\n===================== Text ================================\n\n\n")    
+    print(textract_text_from_doc(doc))
+
+    print("\n\n\n===================== Text Stemmed ================================\n\n\n")    
+    print(textract_text_from_doc(doc, True))
+
+    print("\n\n\n===================== Sentences ================================\n\n\n")    
+    sentences = textract_sentence_tokenize(doc)
+    for index, sentence in enumerate(sentences):
+        print("[{}] [{}]".format(index, sentence))
+        
+    print("\n\n\n===================== Sentences Stemmed ================================\n\n\n")    
+    sentences = textract_sentence_tokenize(doc, True)
+    for index, sentence in enumerate(sentences):
+        print("[{}] [{}]".format(index, sentence))
+
+
+    print("\n\n\n===================== Words ================================\n\n\n")
+    print(textract_word_tokenize(doc))
+
+    print("\n\n\n===================== Words Stemmed ================================\n\n\n")
+    print(textract_word_tokenize(doc, True))
     
-    print(word_tokenize(result))
+    # print("\n\n\n===================== Paragraphs ================================\n\n\n")    
+    # print(textract_paragraph_tokenize(doc))
 
 run()
