@@ -1,10 +1,22 @@
 
+r"""
+Tokenizers for Amazon Textract. 
+The default Stemmer used in each function is the popular PorterStemmer from the NLTK library.
+"""
 import nltk
 
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import PorterStemmer 
 
-def textract_text_from_doc(doc, stemmed = False):
+def textract_text_from_doc(doc: 'Document', stemmed: 'Boolean' = False)-> 'string': 
+    """
+    Gathers all the text from the given Textract result. 
+
+    @param doc: Document type defined in the trp module
+    @param stemmed: boolean, if true generates a stemmed result with the NLTK's PorterStemmer
+    @return: text result
+    """
+
     result = ''
     for page in doc.pages:
         for line in page.lines:
@@ -20,7 +32,14 @@ def textract_text_from_doc(doc, stemmed = False):
     else:                 
         return result
 
-def textract_print_document(doc):
+def textract_print_document(doc: 'Document'):
+    """
+    Prints the content of the document:
+    Per page it prints the lines, words, tables and the key value pairs of the form. 
+
+    @param doc: Document type defined in the trp module
+    """
+
     for page in doc.pages:
         print("\n\n\n\n\n\n\n\nPAGE\n====================")
         for line in page.lines:
@@ -43,7 +62,13 @@ def textract_print_document(doc):
             print("Field: Key: {}, Value: {}".format(k,v))
 
 
-def textract_sentence_tokenize(doc,stemmed = False):
+def textract_sentence_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[]': 
+    """
+    Tokenizes the content of the document to sentences, it is using the NLTK's sent_tokenizer.
+
+    @param doc: Document type defined in the trp module
+    @param stemmed: boolean, if true generates a stemmed result with the NLTK's PorterStemmer
+    """
     content = textract_text_from_doc(doc)
     if stemmed:
         ps = PorterStemmer()
@@ -57,12 +82,18 @@ def textract_sentence_tokenize(doc,stemmed = False):
     
 
 
-def textract_paragraph_tokenize(doc,stemmed = False):
+def textract_paragraph_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[]':
     print("Paragraph not supported!")
     print("https://github.com/aws-samples/amazon-textract-response-parser/issues/2")
 
 
-def textract_word_tokenize(doc,stemmed = False):
+def textract_word_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[]':
+    """
+    Tokenizes the content of the document to words, it is using the NLTK's word_tokenize.
+
+    @param doc: Document type defined in the trp module
+    @param stemmed: boolean, if true generates a stemmed result with the NLTK's PorterStemmer
+    """
     content = textract_text_from_doc(doc)
     if stemmed:
         ps = PorterStemmer() 

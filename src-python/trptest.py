@@ -1,5 +1,5 @@
 import json
-from trp import Document
+from textract_response_parser import Document
 from textract_tokenizer import *
 
 def run():
@@ -12,7 +12,6 @@ def run():
     doc = Document(response)
 
     textract_print_document(doc)
-
     # print("\n\n\n===================== Text ================================\n\n\n")    
     # print(textract_text_from_doc(doc))
 
