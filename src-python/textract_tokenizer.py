@@ -20,6 +20,29 @@ def textract_text_from_doc(doc, stemmed = False):
     else:                 
         return result
 
+def textract_print_document(doc):
+    for page in doc.pages:
+        print("\n\n\n\n\n\n\n\nPAGE\n====================")
+        for line in page.lines:
+            print("Line: {}--{}".format(line.text, line.confidence))
+            for word in line.words:
+                print("Word: {}--{}".format(word.text, word.confidence))
+        for table in page.tables:
+            print("\n\n\n\n\n\n\nTABLE\n====================")
+            for r, row in enumerate(table.rows):
+                for c, cell in enumerate(row.cells):
+                    print("Table[{}][{}] = {}-{}".format(r, c, cell.text, cell.confidence))
+        print("\n\n\n\n\n\nForm (key/values)\n====================")
+        for field in page.form.fields:
+            k = ""
+            v = ""
+            if(field.key):
+                k = field.key.text
+            if(field.value):
+                v = field.value.text
+            print("Field: Key: {}, Value: {}".format(k,v))
+
+
 def textract_sentence_tokenize(doc,stemmed = False):
     content = textract_text_from_doc(doc)
     if stemmed:
@@ -35,7 +58,8 @@ def textract_sentence_tokenize(doc,stemmed = False):
 
 
 def textract_paragraph_tokenize(doc,stemmed = False):
-    print("Paragraph Tokenize")
+    print("Paragraph not supported!")
+    print("https://github.com/aws-samples/amazon-textract-response-parser/issues/2")
 
 
 def textract_word_tokenize(doc,stemmed = False):

@@ -607,7 +607,7 @@ class Document:
     def _parseDocumentPagesAndBlockMap(self):
 
         blockMap = {}
-
+    
         documentPages = []
         documentPage = None
         for page in self._responsePages:
