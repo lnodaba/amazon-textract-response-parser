@@ -4,11 +4,45 @@ Tokenizers for Amazon Textract.
 The default Stemmer used in each function is the popular PorterStemmer from the NLTK library.
 """
 import nltk
-
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import PorterStemmer 
+from textract_response_parser import Document
+from types import FunctionType
+import inspect
+import functools
+from typing import List
 
-def textract_text_from_doc(doc: 'Document', stemmed: 'Boolean' = False)-> 'string': 
+
+def check_types(func):
+    msg = "Expected type {etype} for {para} got {got}"
+    para = inspect.signature(func).parameters
+    keys = tuple(para.keys())
+
+    @functools.wraps(func)
+    def wrapper(*args,**kwargs):
+        def do_check(anno,value,para):
+            if not isinstance(value, anno):
+                raise TypeError(msg.format(etype=anno,
+                    para=para,
+                    got=type(value)))
+
+        for i,value in  enumerate(args):
+            anno = para[keys[i]].annotation
+            do_check(anno, value, keys[i])
+
+        for arg_name,value in  kwargs.items():
+            anno = para[arg_name].annotation
+            do_check(anno, value, arg_name)
+
+        ret = func(*args,**kwargs)
+        if "return" in func.__annotations__:
+            anno = func.__annotations__["return"]
+            do_check(anno, ret, "return")
+        return ret
+    return wrapper
+
+@check_types
+def textract_text_from_doc(doc: Document, stemmed: bool = False)-> str: 
     """
     Gathers all the text from the given Textract result. 
 
@@ -32,7 +66,8 @@ def textract_text_from_doc(doc: 'Document', stemmed: 'Boolean' = False)-> 'strin
     else:                 
         return result
 
-def textract_print_document(doc: 'Document'):
+@check_types
+def textract_print_document(doc: Document):
     """
     Prints the content of the document:
     Per page it prints the lines, words, tables and the key value pairs of the form. 
@@ -61,8 +96,8 @@ def textract_print_document(doc: 'Document'):
                 v = field.value.text
             print("Field: Key: {}, Value: {}".format(k,v))
 
-
-def textract_sentence_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[]': 
+@check_types
+def textract_sentence_tokenize(doc: Document, stemmed: bool = False)-> List: 
     """
     Tokenizes the content of the document to sentences, it is using the NLTK's sent_tokenizer.
 
@@ -81,13 +116,14 @@ def textract_sentence_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'l
         return sent_tokenize(content)
     
 
-
-def textract_paragraph_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[]':
+@check_types
+def textract_paragraph_tokenize(doc: Document, stemmed: bool = False): 
     print("Paragraph not supported!")
     print("https://github.com/aws-samples/amazon-textract-response-parser/issues/2")
 
 
-def textract_word_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[]':
+@check_types
+def textract_word_tokenize(doc: Document, stemmed: bool = False)-> List: 
     """
     Tokenizes the content of the document to words, it is using the NLTK's word_tokenize.
 
@@ -100,3 +136,4 @@ def textract_word_tokenize(doc: 'Document', stemmed: 'Boolean' = False)-> 'list[
         return [ps.stem(word) for word in word_tokenize(content)]
     else:                 
         return word_tokenize(content)
+

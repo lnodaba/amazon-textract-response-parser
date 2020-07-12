@@ -29,21 +29,43 @@ class TextractTokenizerTests(unittest.TestCase):
         self.assertTrue("assess" in result)
 
     def test_textract_sentence_tokenize(self):
-        self.assertTrue(False)
+          # act
+        result = textract_sentence_tokenize(self.doc)
+
+        # assert
+        self.assertTrue(len(result) > 0)
 
     def test_textract_sentence_tokenize_stemmed(self):
-        self.assertTrue(False)
+          # act
+        result = textract_sentence_tokenize(self.doc, True)
 
+        # assert
+        self.assertTrue(len(result) > 0)
+        self.assertFalse("Assessment" in result[0])
+        self.assertTrue("assess" in result[0])
+
+  
+    def test_textract_word_tokenize(self):
+         # act
+        result = textract_word_tokenize(self.doc)
+
+        # assert
+        self.assertTrue(len(result) > 0)
+
+
+    def test_textract_word_tokenize_stemmed(self):
+        # act
+        result = textract_word_tokenize(self.doc, True)
+
+        # assert
+        self.assertTrue(len(result) > 0)
+        self.assertFalse("Assessment" in result)
+        self.assertTrue("assess" in result)
+    
     def test_textract_paragraph_tokenize(self):
         self.assertTrue(False)
 
     def test_textract_paragraph_tokenize_stemmed(self):
-        self.assertTrue(False)
-
-    def test_textract_word_tokenize(self):
-        self.assertTrue(False)
-
-    def test_textract_word_tokenize_stemmed(self):
         self.assertTrue(False)
 
 if __name__ == '__main__':
