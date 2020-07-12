@@ -67,6 +67,20 @@ def textract_text_from_doc(doc: Document, stemmed: bool = False)-> str:
         return result
 
 @check_types
+def textract_print_lines(doc: Document):
+    # Based on the text_indent and row_space I can implement an approximation of the paragraphs.
+    last_line = None
+    for page in doc.pages:
+        print("\n\n\n\n\n\n\n\nPAGE\n====================")
+        for line in page.lines:
+            row_space = line.geometry.boundingBox.top - (last_line.geometry.boundingBox.top if last_line else 0)
+            text_indent = line.geometry.boundingBox.left - (last_line.geometry.boundingBox.left if last_line else 0)
+            print("Line: [Left:{} text_intent:{} top:{} row_space: {}] =>  {}--{}"
+                    .format(line.geometry.boundingBox.left, text_indent, line.geometry.boundingBox.top, row_space, line.text, line.confidence))
+            last_line = line
+
+
+@check_types
 def textract_print_document(doc: Document):
     """
     Prints the content of the document:
@@ -78,7 +92,7 @@ def textract_print_document(doc: Document):
     for page in doc.pages:
         print("\n\n\n\n\n\n\n\nPAGE\n====================")
         for line in page.lines:
-            print("Line: {}--{}".format(line.text, line.confidence))
+            print("Line: [{}] =>  {}--{}".format(line.geometry.boundingBox , line.text, line.confidence))
             for word in line.words:
                 print("Word: {}--{}".format(word.text, word.confidence))
         for table in page.tables:
