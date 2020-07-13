@@ -7,7 +7,7 @@ class TextractTokenizerTests(unittest.TestCase):
     def setUp(self):
         # arrange
         response = {}
-        filePath = "3-response.json"
+        filePath = "./test_data/3-response.json"
         with open(filePath, 'r') as document:
             response = json.loads(document.read())
         self.doc = Document(response)
@@ -63,10 +63,20 @@ class TextractTokenizerTests(unittest.TestCase):
         self.assertTrue("assess" in result)
     
     def test_textract_paragraph_tokenize(self):
-        self.assertTrue(False)
+         # act
+        result = textract_paragraph_tokenize(self.doc)
+        
+        # assert
+        self.assertTrue(len(result) > 0)
 
     def test_textract_paragraph_tokenize_stemmed(self):
-        self.assertTrue(False)
+        # act
+        result = textract_paragraph_tokenize(self.doc, True)
+        
+        # assert
+        self.assertTrue(len(result) > 0)
+        self.assertFalse("Assessment" in result[2])
+        self.assertTrue("assess" in result[2])
 
 if __name__ == '__main__':
     unittest.main()
