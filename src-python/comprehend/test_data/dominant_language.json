@@ -1,0 +1,19 @@
+{
+    "Languages": [
+        {
+            "LanguageCode": "en",      
+            "Score": 0.9972370266914368
+        }
+    ],
+    "ResponseMetadata": {
+        "HTTPHeaders": {
+            "content-length": "64",
+            "content-type": "application/x-amz-json-1.1",
+            "date": "Tue, 14 Jul 2020 17:21:46 GMT",
+            "x-amzn-requestid": "36940dbf-d062-49d7-b7a7-35bdfd827ccd"
+        },
+        "HTTPStatusCode": 200,
+        "RequestId": "36940dbf-d062-49d7-b7a7-35bdfd827ccd",
+        "RetryAttempts": 0
+    }
+}

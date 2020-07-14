@@ -1,13 +1,13 @@
 import json
-from textract_response_parser import Document
-from textract_tokenizer import *
-
+from textract.textract_response_parser import Document
+from textract.textract_tokenizer import *
 
 def run():
     
+
     response = {}
     
-    filePath = "./test_data/6-response.json"
+    filePath = "./textract/test_data/6-response.json"
     with open(filePath, 'r') as document:
         response = json.loads(document.read())
 

@@ -1,13 +1,13 @@
 import unittest
 import json
-from textract_response_parser import Document
-from textract_tokenizer import *
+from textract.textract_response_parser import Document
+from textract.textract_tokenizer import *
 
 class TextractTokenizerTests(unittest.TestCase):
     def setUp(self):
         # arrange
         response = {}
-        filePath = "./test_data/3-response.json"
+        filePath = "./textract/test_data/3-response.json"
         with open(filePath, 'r') as document:
             response = json.loads(document.read())
         self.doc = Document(response)
@@ -80,3 +80,5 @@ class TextractTokenizerTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# python .\textract\textract_tokenizer_tests.py

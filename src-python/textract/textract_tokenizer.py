@@ -4,12 +4,13 @@ Tokenizers for Amazon Textract.
 The default Stemmer used in each function is the popular PorterStemmer from the NLTK library.
 """
 import nltk
-from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.stem import PorterStemmer 
-from textract_response_parser import Document
-from types import FunctionType
 import inspect
 import functools
+
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.stem import PorterStemmer 
+from textract.textract_response_parser import Document
+from types import FunctionType
 from typing import List
 from statistics import mean, median_grouped
 

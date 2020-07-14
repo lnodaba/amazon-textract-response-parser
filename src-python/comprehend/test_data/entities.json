@@ -1,0 +1,106 @@
+{
+    "Entities": [
+        {
+            "BeginOffset": 23,
+            "EndOffset": 27,
+            "Score": 0.9991276860237122,
+            "Text": "1922",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 52,
+            "EndOffset": 67,
+            "Score": 0.9993136525154114,
+            "Text": "First World War",
+            "Type": "EVENT"
+        },
+        {
+            "BeginOffset": 76,
+            "EndOffset": 87,
+            "Score": 0.9733337163925171,
+            "Text": "Spanish Flu",
+            "Type": "EVENT"
+        },
+        {
+            "BeginOffset": 275,
+            "EndOffset": 283,
+            "Score": 0.7190278768539429,
+            "Text": "thirties",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 292,
+            "EndOffset": 308,
+            "Score": 0.5307145118713379,
+            "Text": "Great Depression",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 418,
+            "EndOffset": 434,
+            "Score": 0.9993383288383484,
+            "Text": "Second World War",
+            "Type": "EVENT"
+        },
+        {
+            "BeginOffset": 469,
+            "EndOffset": 471,
+            "Score": 0.9852826595306396,
+            "Text": "17",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 594,
+            "EndOffset": 598,
+            "Score": 0.6587009429931641,
+            "Text": "1943",
+            "Type": "DATE"
+        },
+        {
+            "BeginOffset": 614,
+            "EndOffset": 619,
+            "Score": 0.9905779361724854,
+            "Text": "Italy",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 640,
+            "EndOffset": 665,
+            "Score": 0.9986786842346191,
+            "Text": "West Nova Scotia Regiment",
+            "Type": "ORGANIZATION"
+        },
+        {
+            "BeginOffset": 724,
+            "EndOffset": 739,
+            "Score": 0.8009228110313416,
+            "Text": "The Gothic Line",
+            "Type": "LOCATION"
+        },
+        {
+            "BeginOffset": 827,
+            "EndOffset": 838,
+            "Score": 0.9875860214233398,
+            "Text": "four months",
+            "Type": "QUANTITY"
+        },
+        {
+            "BeginOffset": 1006,
+            "EndOffset": 1019,
+            "Score": 0.998977541923523,
+            "Text": "February 1946",
+            "Type": "DATE"
+        }
+    ],
+    "ResponseMetadata": {
+        "HTTPHeaders": {
+            "content-length": "1316",
+            "content-type": "application/x-amz-json-1.1",
+            "date": "Tue, 14 Jul 2020 17:50:20 GMT",
+            "x-amzn-requestid": "50f55494-0726-47e2-835a-5f58c1e72f99"
+        },
+        "HTTPStatusCode": 200,
+        "RequestId": "50f55494-0726-47e2-835a-5f58c1e72f99",
+        "RetryAttempts": 0
+    }
+}

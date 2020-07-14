@@ -1,0 +1,279 @@
+{
+    "KeyPhrases": [
+        {
+            "BeginOffset": 1,
+            "EndOffset": 10,
+            "Score": 0.9999920725822449,
+            "Text": "My father"
+        },
+        {
+            "BeginOffset": 23,
+            "EndOffset": 27,
+            "Score": 0.9999994039535522,
+            "Text": "1922"
+        },
+        {
+            "BeginOffset": 31,
+            "EndOffset": 44,
+            "Score": 0.9999998211860657,
+            "Text": "the aftermath"
+        },
+        {
+            "BeginOffset": 48,
+            "EndOffset": 67,
+            "Score": 0.9999999403953552,
+            "Text": "the First World War"
+        },
+        {
+            "BeginOffset": 72,
+            "EndOffset": 87,
+            "Score": 0.9999998211860657,
+            "Text": "the Spanish Flu"
+        },
+        {
+            "BeginOffset": 108,
+            "EndOffset": 119,
+            "Score": 0.9999927878379822,
+            "Text": "war stories"
+        },
+        {
+            "BeginOffset": 125,
+            "EndOffset": 135,
+            "Score": 0.9999999403953552,
+            "Text": "his uncles"
+        },
+        {
+            "BeginOffset": 188,
+            "EndOffset": 212,
+            "Score": 0.9999598264694214,
+            "Text": "his family and community"
+        },
+        {
+            "BeginOffset": 225,
+            "EndOffset": 234,
+            "Score": 0.9999997615814209,
+            "Text": "influenza"
+        },
+        {
+            "BeginOffset": 257,
+            "EndOffset": 261,
+            "Score": 0.9999997615814209,
+            "Text": "life"
+        },
+        {
+            "BeginOffset": 265,
+            "EndOffset": 283,
+            "Score": 0.9999998211860657,
+            "Text": "the dirty thirties"
+        },
+        {
+            "BeginOffset": 288,
+            "EndOffset": 308,
+            "Score": 0.9999995827674866,
+            "Text": "the Great Depression"
+        },
+        {
+            "BeginOffset": 323,
+            "EndOffset": 328,
+            "Score": 0.9997251629829407,
+            "Text": "socks"
+        },
+        {
+            "BeginOffset": 332,
+            "EndOffset": 341,
+            "Score": 1.0,
+            "Text": "his hands"
+        },
+        {
+            "BeginOffset": 363,
+            "EndOffset": 369,
+            "Score": 0.9999886751174927,
+            "Text": "winter"
+        },
+        {
+            "BeginOffset": 385,
+            "EndOffset": 393,
+            "Score": 0.9999969005584717,
+            "Text": "no mitts"
+        },
+        {
+            "BeginOffset": 398,
+            "EndOffset": 410,
+            "Score": 0.9999998807907104,
+            "Text": "the outbreak"
+        },
+        {
+            "BeginOffset": 414,
+            "EndOffset": 434,
+            "Score": 0.9999999403953552,
+            "Text": "the Second World War"
+        },
+        {
+            "BeginOffset": 443,
+            "EndOffset": 465,
+            "Score": 0.9999943375587463,
+            "Text": "a young, strapping lad"
+        },
+        {
+            "BeginOffset": 469,
+            "EndOffset": 471,
+            "Score": 0.9999977350234985,
+            "Text": "17"
+        },
+        {
+            "BeginOffset": 489,
+            "EndOffset": 500,
+            "Score": 0.999998927116394,
+            "Text": "his country"
+        },
+        {
+            "BeginOffset": 512,
+            "EndOffset": 536,
+            "Score": 0.9998390674591064,
+            "Text": "the labour- intense work"
+        },
+        {
+            "BeginOffset": 540,
+            "EndOffset": 549,
+            "Score": 0.9999999403953552,
+            "Text": "the woods"
+        },
+        {
+            "BeginOffset": 561,
+            "EndOffset": 575,
+            "Score": 0.9999999403953552,
+            "Text": "a regular meal"
+        },
+        {
+            "BeginOffset": 580,
+            "EndOffset": 590,
+            "Score": 0.9999996423721313,
+            "Text": "the summer"
+        },
+        {
+            "BeginOffset": 594,
+            "EndOffset": 598,
+            "Score": 1.0,
+            "Text": "1943"
+        },
+        {
+            "BeginOffset": 614,
+            "EndOffset": 619,
+            "Score": 0.9999998807907104,
+            "Text": "Italy"
+        },
+        {
+            "BeginOffset": 636,
+            "EndOffset": 665,
+            "Score": 0.9999961853027344,
+            "Text": "the West Nova Scotia Regiment"
+        },
+        {
+            "BeginOffset": 695,
+            "EndOffset": 701,
+            "Score": 1.0,
+            "Text": "action"
+        },
+        {
+            "BeginOffset": 705,
+            "EndOffset": 720,
+            "Score": 0.9999998211860657,
+            "Text": "the battlefield"
+        },
+        {
+            "BeginOffset": 724,
+            "EndOffset": 739,
+            "Score": 0.9999960064888,
+            "Text": "The Gothic Line"
+        },
+        {
+            "BeginOffset": 745,
+            "EndOffset": 766,
+            "Score": 0.9999690651893616,
+            "Text": "the stretcher bearers"
+        },
+        {
+            "BeginOffset": 808,
+            "EndOffset": 816,
+            "Score": 0.9999989867210388,
+            "Text": "the dead"
+        },
+        {
+            "BeginOffset": 827,
+            "EndOffset": 838,
+            "Score": 0.9999937415122986,
+            "Text": "four months"
+        },
+        {
+            "BeginOffset": 842,
+            "EndOffset": 850,
+            "Score": 0.9998363256454468,
+            "Text": "hospital"
+        },
+        {
+            "BeginOffset": 867,
+            "EndOffset": 875,
+            "Score": 0.9999995231628418,
+            "Text": "the loss"
+        },
+        {
+            "BeginOffset": 879,
+            "EndOffset": 885,
+            "Score": 0.9999994039535522,
+            "Text": "a lung"
+        },
+        {
+            "BeginOffset": 908,
+            "EndOffset": 920,
+            "Score": 0.9999958276748657,
+            "Text": "his regiment"
+        },
+        {
+            "BeginOffset": 936,
+            "EndOffset": 948,
+            "Score": 0.9999997615814209,
+            "Text": "the duration"
+        },
+        {
+            "BeginOffset": 952,
+            "EndOffset": 959,
+            "Score": 0.9999985098838806,
+            "Text": "the war"
+        },
+        {
+            "BeginOffset": 981,
+            "EndOffset": 993,
+            "Score": 0.9999998807907104,
+            "Text": "the province"
+        },
+        {
+            "BeginOffset": 1006,
+            "EndOffset": 1019,
+            "Score": 0.9996601343154907,
+            "Text": "February 1946"
+        },
+        {
+            "BeginOffset": 1021,
+            "EndOffset": 1027,
+            "Score": 0.999491810798645,
+            "Text": "battle"
+        },
+        {
+            "BeginOffset": 1077,
+            "EndOffset": 1090,
+            "Score": 0.9999998211860657,
+            "Text": "a better life"
+        }
+    ],
+    "ResponseMetadata": {
+        "HTTPHeaders": {
+            "content-length": "3692",
+            "content-type": "application/x-amz-json-1.1",
+            "date": "Tue, 14 Jul 2020 18:07:59 GMT",
+            "x-amzn-requestid": "8a41a7d0-ecc1-4d8e-86fe-1641a1c4d8b8"
+        },
+        "HTTPStatusCode": 200,
+        "RequestId": "8a41a7d0-ecc1-4d8e-86fe-1641a1c4d8b8",
+        "RetryAttempts": 2
+    }
+}
