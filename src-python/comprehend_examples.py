@@ -10,8 +10,8 @@ def run():
     filePath = "./textract/test_data/6-response.json"
     with open(filePath, 'r') as document:
         response = json.loads(document.read())
+
     doc = Document(response)
-    
     text = textract_text_from_doc(doc)
     client = ComprehendClient()
     
